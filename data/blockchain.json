@@ -1,0 +1,184 @@
+[
+    {
+        "index": 0,
+        "timestamp": 1751610985.39265,
+        "data": {
+            "deviceId": "genesis",
+            "aqi": 0,
+            "temperature": 0,
+            "humidity": 0,
+            "location": {
+                "lat": 0.0,
+                "lon": 0.0
+            }
+        },
+        "previous_hash": "0",
+        "hash": "c76ab40fa938785fc7583f8e31b6eace3208c1daa65dd2d003240b38d3e2dc27"
+    },
+    {
+        "index": 1,
+        "timestamp": 1751611168.4615984,
+        "data": {
+            "deviceId": "sensor_003",
+            "aqi": 2,
+            "temperature": 69.9,
+            "humidity": 99,
+            "location": {
+                "lat": 18.52,
+                "lon": 73.85
+            }
+        },
+        "previous_hash": "c76ab40fa938785fc7583f8e31b6eace3208c1daa65dd2d003240b38d3e2dc27",
+        "hash": "8c5bbe96cbb3e2e94681df972483e160e05da01d89376cbb46c891afdbb9046f"
+    },
+    {
+        "index": 2,
+        "timestamp": 1751611205.2981858,
+        "data": {
+            "deviceId": "sensor_004",
+            "aqi": 2,
+            "temperature": 27.6,
+            "humidity": 99,
+            "location": {
+                "lat": 18.52,
+                "lon": 73.85
+            }
+        },
+        "previous_hash": "8c5bbe96cbb3e2e94681df972483e160e05da01d89376cbb46c891afdbb9046f",
+        "hash": "ab20733bb07217c2ef98a8b570714dea2ed4d89f0021c7b2eb5c0b4b6c807186"
+    },
+    {
+        "index": 3,
+        "timestamp": 1751617289.4240806,
+        "data": {
+            "deviceId": "sensor_rucha",
+            "aqi": 2,
+            "temperature": 27.6,
+            "humidity": 99,
+            "location": {
+                "lat": 18.52,
+                "lon": 73.85
+            }
+        },
+        "previous_hash": "ab20733bb07217c2ef98a8b570714dea2ed4d89f0021c7b2eb5c0b4b6c807186",
+        "hash": "42ad6fa5a04cf2edde825b643da0120662e20b62049f592a9115535eba6da2f7"
+    },
+    {
+        "index": 4,
+        "timestamp": 1751617317.5372164,
+        "data": {
+            "deviceId": "sensor_rucha",
+            "aqi": 28.6,
+            "temperature": 2.6,
+            "humidity": 99,
+            "location": {
+                "lat": 18.52,
+                "lon": 73.85
+            }
+        },
+        "previous_hash": "42ad6fa5a04cf2edde825b643da0120662e20b62049f592a9115535eba6da2f7",
+        "hash": "7ca7bb09983dc739127184b2ec5bc7e0fab2d84f071a1875d40e8239a15ab43e"
+    },
+    {
+        "index": 5,
+        "timestamp": 1751622410.5042205,
+        "data": {
+            "deviceId": "sensor_001",
+            "aqi": 28.6,
+            "temperature": 2.6,
+            "humidity": 99,
+            "location": {
+                "lat": 18.52,
+                "lon": 73.85
+            },
+            "timestamp": 1751622410.505984
+        },
+        "previous_hash": "7ca7bb09983dc739127184b2ec5bc7e0fab2d84f071a1875d40e8239a15ab43e",
+        "hash": "1a4fdfdf2e8e6facac03b275f89bb9c976044321ee8b38b11ba8d11d62690d06"
+    },
+    {
+        "index": 6,
+        "timestamp": 1751622484.9717746,
+        "data": {
+            "deviceId": "sensor_001",
+            "aqi": 28.6,
+            "temperature": 2.6,
+            "humidity": 99,
+            "location": {
+                "lat": 20.820872,
+                "lon": 75.855142
+            },
+            "timestamp": 1751622484.9759004
+        },
+        "previous_hash": "1a4fdfdf2e8e6facac03b275f89bb9c976044321ee8b38b11ba8d11d62690d06",
+        "hash": "6200a54999d785df02893dd92302bfbcd92d82f37e8d715e6acc0f94eec04d4e"
+    },
+    {
+        "index": 7,
+        "timestamp": 1751622568.0404632,
+        "data": {
+            "deviceId": "sensor_002",
+            "aqi": 28.6,
+            "temperature": 2.6,
+            "humidity": 99,
+            "location": {
+                "lat": 20.820872,
+                "lon": 75.855142
+            },
+            "timestamp": 1751622568.0587766
+        },
+        "previous_hash": "6200a54999d785df02893dd92302bfbcd92d82f37e8d715e6acc0f94eec04d4e",
+        "hash": "cb514e0a770426f1d62279b67eed1a7cbc9b0be1e3f4f9e7d65d49f8bf5c3da7"
+    },
+    {
+        "index": 8,
+        "timestamp": 1751622923.2434583,
+        "data": {
+            "deviceId": "sensor_007_pune",
+            "aqi": 16.3,
+            "temperature": 29.4,
+            "humidity": 71,
+            "location": {
+                "lat": 18.5204,
+                "lon": 73.8567
+            },
+            "timestamp": 1751622923.2446723
+        },
+        "previous_hash": "cb514e0a770426f1d62279b67eed1a7cbc9b0be1e3f4f9e7d65d49f8bf5c3da7",
+        "hash": "15dcda75e7ce351c05cbfc6172fd52c29a4274ca0d72ca965cc050df9cb8740d"
+    },
+    {
+        "index": 9,
+        "timestamp": 1751622933.268754,
+        "data": {
+            "deviceId": "sensor_007_pune",
+            "aqi": 1116.3,
+            "temperature": 29.4,
+            "humidity": 71,
+            "location": {
+                "lat": 18.5204,
+                "lon": 73.8567
+            },
+            "timestamp": 1751622933.2701163
+        },
+        "previous_hash": "15dcda75e7ce351c05cbfc6172fd52c29a4274ca0d72ca965cc050df9cb8740d",
+        "hash": "f843e565cc4304c0892a84bc9ee27c4a0f67e2f3752233632dbb4557b2742048"
+    },
+    {
+        "index": 10,
+        "timestamp": 1751622942.1033485,
+        "data": {
+            "deviceId": "sensor_007_pune",
+            "aqi": 106.3,
+            "temperature": 29.4,
+            "humidity": 71,
+            "location": {
+                "lat": 18.5204,
+                "lon": 73.8567
+            },
+            "timestamp": 1751652507.789012
+        },
+        "previous_hash": "f843e565cc4304c0892a84bc9ee27c4a0f67e2f3752233632dbb4557b2742048",
+        "hash": "d6e06cd49228129bea20ac1354c85c245de5bd69f290478919194afee78091f8"
+    }
+]

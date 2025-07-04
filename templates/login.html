@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | Plentera</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #121212;
+      color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .form-box {
+      background: #1e1e1e;
+      padding: 30px;
+      border-radius: 12px;
+      width: 320px;
+      box-shadow: 0 0 20px rgba(0, 255, 100, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .form-box h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 6px;
+      background-color: #2a2a2a;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    input::placeholder {
+      color: #aaa;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 6px;
+      background: #00ff88;
+      color: #000;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #00e676;
+    }
+
+    .signup-link {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .signup-link a {
+      color: #00ff88;
+      text-decoration: none;
+    }
+
+    .signup-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-box">
+    <h2>🔐 Login</h2>
+    <form action="/login" method="POST">
+      <input type="text" name="email" placeholder="Enter your email" required />
+      <input type="password" name="password" placeholder="Enter your password" required />
+      <button type="submit">Login</button>
+    </form>
+    <div class="signup-link">
+      New here? <a href="/sign_up">Create an account</a>
+    </div>
+  </div>
+</body>
+</html>

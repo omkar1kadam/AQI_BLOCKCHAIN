@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up | Plentera</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: rgb(8, 15, 25);
+      color: #ccc;
+      padding-top: 80px;
+      /* navbar space */
+    }
+
+    /* Navbar (same as login) */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: rgb(8, 15, 25);
+      padding: 15px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 999;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .logo img {
+      height: 50px;
+      width: auto;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: rgb(110, 198, 74);
+    }
+
+    .login-btn {
+      background-color: transparent;
+      color: rgb(110, 198, 74);
+      border: 1px solid rgb(110, 198, 74);
+      padding: 8px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+
+    .login-btn:hover {
+      background-color: rgb(110, 198, 74);
+      color: #111;
+    }
+
+    /* Signup background & overlay */
+    .signup-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: calc(100vh - 80px);
+      position: relative;
+      background: center/cover no-repeat;
+      z-index: 1;
+    }
+
+    .signup-container::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 0;
+    }
+
+    /* Sign Up box */
+    .signup-box {
+      background-color: #111;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(110, 198, 74, 0.2);
+      max-width: 450px;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .signup-box h2 {
+      text-align: center;
+      color: rgb(110, 198, 74);
+      margin-bottom: 30px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      background-color: #1c1c1c;
+      border: 1px solid #333;
+      border-radius: 6px;
+      color: #ccc;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: rgb(110, 198, 74);
+      box-shadow: 0 0 6px rgba(110, 198, 74, 0.5);
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: rgb(110, 198, 74);
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #111;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #85cc57;
+    }
+
+    .login-link {
+      margin-top: 15px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .login-link a {
+      color: rgb(110, 198, 74);
+      text-decoration: none;
+    }
+
+    .login-link a:hover {
+      text-decoration: underline;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    /* Popup overlay */
+    #otp-popup {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Popup message box */
+    #otp-popup-message {
+      background: #222;
+      color: #fff;
+      padding: 20px 30px;
+      border-radius: 8px;
+      font-size: 16px;
+      box-shadow: 0 0 10px rgba(110, 198, 74, 0.5);
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="home">
+        <img src="{{ url_for('static', filename='images/dark logo2.png') }}" alt="logo" />
+      </a>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="home">Home</a></li>
+      <li><a href="about">About</a></li>
+      <li><a href="#">Causes</a></li>
+      <li><a href="#">Pages</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+
+    <a class="login-btn" href="#">Login <i class="fas fa-arrow-right"></i></a>
+  </nav>
+
+  <!-- Sign Up Form -->
+  <div class="signup-container">
+    <div class="signup-box">
+      <h2>Create a Plentera Account</h2>
+      <form id="signupForm" action="/signup" method="POST">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required />
+
+        <label for="email">Email</label>
+        <div style="display: flex; gap: 10px;">
+          <input type="email" id="email" name="email" placeholder="Enter your email" required />
+          <button type="button" onclick="sendOTP()">Send OTP</button>
+        </div>
+
+        <label for="otp">Enter OTP</label>
+        <input type="text" id="otp" name="otp" placeholder="Enter the OTP" required />
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Create a password" required />
+
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" id="confirm-password" name="confirm_password" placeholder="Confirm your password"
+          required />
+
+        <button type="submit">Sign Up</button>
+
+        <p class="login-link">Already have an account? <a href="/login">Log in</a></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- OTP Popup -->
+  <div id="otp-popup">
+    <div id="otp-popup-message">Sending OTP...</div>
+  </div>
+
+
+
+  <script>
+    const link = "https://glorious-robot-v6gp69xpqxvq2p459-5000.app.github.dev";
+
+    // OTP Sending function
+    async function sendOTP() {
+      const email = document.getElementById("email").value;
+      const popup = document.getElementById("otp-popup");
+      const popupMsg = document.getElementById("otp-popup-message");
+
+      if (!email) {
+        alert("Please enter your email first.");
+        return;
+      }
+
+      // Show popup with initial message
+      popupMsg.textContent = "Sending OTP...";
+      popup.style.display = "flex";
+
+      try {
+        const response = await fetch(`${link}/send-otp`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: email })
+        });
+
+        const result = await response.json();
+        if (result.success) {
+          popupMsg.textContent = "OTP sent to your email.";
+        } else {
+          popupMsg.textContent = "Failed to send OTP: " + result.message;
+        }
+      } catch (err) {
+        popupMsg.textContent = "Error sending OTP.";
+      }
+
+      setTimeout(() => {
+        popup.style.display = "none";
+      }, 2500);
+    }
+
+    // OTP Verification + Form Submission
+    document.getElementById("signupForm").addEventListener("submit", async function (e) {
+      e.preventDefault(); // Stop form for now
+
+      const email = document.getElementById("email").value;
+      const otp = document.getElementById("otp").value;
+
+      try {
+        const response = await fetch(`${link}/verify-otp`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: email, otp: otp })
+        });
+
+        const result = await response.json();
+
+        if (result.verified) {
+          // OTP verified — now submit the form manually
+          this.submit(); // this = signupForm
+        } else {
+          alert("❌ Invalid OTP. Please try again.");
+        }
+      } catch (error) {
+        console.error("Error verifying OTP:", error);
+        alert("Error verifying OTP.");
+      }
+    });
+  </script>
+
+
+</body>
+
+
+</html>

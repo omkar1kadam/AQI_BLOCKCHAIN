@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>🌍 Full Blockchain View</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #f0f0f0;
+      padding: 20px;
+    }
+    .block {
+      background-color: #1e1e1e;
+      border: 1px solid #333;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(0,255,0,0.1);
+    }
+    .block h3 {
+      color: #00ff88;
+    }
+  </style>
+</head>
+<body>
+  <h1>📦 Full Blockchain</h1>
+  {% for block in blocks %}
+    <div class="block">
+      <h3>🔗 Block #{{ block.index }}</h3>
+      <p><b>Time:</b> {{ block.timestamp }}</p>
+      <p><b>Device:</b> {{ block.data.deviceId }}</p>
+      <p><b>AQI:</b> {{ block.data.aqi }}</p>
+      <p><b>Temperature:</b> {{ block.data.temperature }} °C</p>
+      <p><b>Humidity:</b> {{ block.data.humidity }} %</p>
+      {% if block.data.location %}
+        <p><b>Location:</b> {{ block.data.location.lat }}, {{ block.data.location.lon }}</p>
+      {% endif %}
+      <p><b>Prev Hash:</b> {{ block.previous_hash }}</p>
+      <p><b>Hash:</b> {{ block.hash }}</p>
+    </div>
+  {% endfor %}
+</body>
+</html>

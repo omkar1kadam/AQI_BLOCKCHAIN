@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Earnings | Plentera</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: rgb(8, 15, 25);
+      color: #ccc;
+    }
+
+    
+    .navbar {
+      background: rgb(8, 15, 25);
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #222;
+    }
+
+    .navbar .logo img {
+      height: 45px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: rgb(110, 198, 74);
+    }
+
+    
+    .container {
+      padding: 60px 10%;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: rgb(110, 198, 74);
+      margin-bottom: 30px;
+    }
+
+    .box {
+      background-color: #1c1c1c;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(110, 198, 74, 0.1);
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .box h2 {
+      color: #fff;
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+    }
+
+    .box .value {
+      font-size: 2.8rem;
+      font-weight: bold;
+      color: rgb(110, 198, 74);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background-color: #1e1e1e;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 16px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #111;
+      color: rgb(110, 198, 74);
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) {
+      background-color: #2a2a2a;
+    }
+
+    tr:hover {
+      background-color: #333;
+    }
+    .withdraw-btn {
+  background-color: rgb(110, 198, 74);
+  color: #111;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.withdraw-btn:hover {
+  background-color: #89e766;
+}
+
+  </style>
+</head>
+<body>
+
+  
+  <nav class="navbar">
+    <div class="logo">
+      <a href="home">
+        <img src="{{ url_for('static', filename='images/dark logo2.png') }}" alt="logo" />
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="kits.html">My Kits</a></li>
+      <li><a href="map.html">Map</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+    </ul>
+  </nav>
+
+  
+  <div class="container">
+    <h1>Your Earnings</h1>
+
+    <div class="box">
+      <h2>Total Tokens Earned</h2>
+      <div class="value">246 Tokens</div>
+    </div>
+
+    <div class="box">
+      <h2>Monetary Value</h2>
+      <div class="value">₹2,46</div>
+      <p style="color: #aaa; font-size: 0.9rem;">(Assuming 1 Token = ₹1.00)</p>
+    </div>
+
+    <h2 style="margin-top: 40px;">Earnings Breakdown</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Sensor Location</th>
+          <th>Sensor ID</th>
+          <th>Tokens</th>
+          <th>₹ Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2025-06-29</td>
+          <td>Pune Campus</td>
+          <td>#K101</td>
+          <td>200</td>
+          <td>₹200</td>
+        </tr>
+        <tr>
+          <td>2025-06-28</td>
+          <td>Mumbai Station</td>
+          <td>#M221</td>
+          <td>360</td>
+          <td>₹360</td>
+        </tr>
+        <tr>
+          <td>2025-06-27</td>
+          <td>Nashik Field</td>
+          <td>#N302</td>
+          <td>400</td>
+          <td>₹400</td>
+        </tr>
+        <tr>
+          <td>2025-06-25</td>
+          <td>Ahmednagar Rural</td>
+          <td>#A909</td>
+          <td>1500</td>
+          <td>₹1500</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="text-align: center; margin: 50px 0;">
+  <button class="withdraw-btn" onclick="withdrawTokens()">Withdraw Tokens</button>
+  </div>
+</body>
+</html>

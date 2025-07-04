@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Live AQI Blockchain</title>
+  <meta http-equiv="refresh" content="5"> <!-- Auto-refresh every 5 seconds -->
+  <style>
+    body {
+      font-family: Arial;
+      background: #121212;
+      color: #f4f4f4;
+      text-align: center;
+      margin-top: 50px;
+    }
+    .card {
+      background: #1e1e1e;
+      padding: 30px;
+      margin: 0 auto;
+      width: 400px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,255,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🌍 Latest Sensor Block</h1>
+    <p><b>Device:</b> {{ block.data.deviceId }}</p>
+    <p><b>Time:</b> {{ block.timestamp }}</p>
+    <p><b>AQI:</b> {{ block.data.aqi }}</p>
+    <p><b>Temp:</b> {{ block.data.temperature }} °C</p>
+    <p><b>Humidity:</b> {{ block.data.humidity }} %</p>
+    <p><b>Lat:</b> {{ block.data.location.lat }} | <b>Lon:</b> {{ block.data.location.lon }}</p>
+    <hr>
+    <p><small>Block #: {{ block.index }}</small></p>
+    <p><small>Hash: {{ block.hash[:30] }}...</small></p>
+  </div>
+</body>
+</html>
