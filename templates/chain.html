@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>🌍 Full Blockchain View</title>
   <style>
@@ -9,35 +10,84 @@
       color: #f0f0f0;
       padding: 20px;
     }
+
     .block {
       background-color: #1e1e1e;
       border: 1px solid #333;
       border-radius: 10px;
-      padding: 15px;
+      padding: 20px;
       margin-bottom: 20px;
-      box-shadow: 0 0 10px rgba(0,255,0,0.1);
+      box-shadow: 0 0 10px rgba(0, 255, 0, 0.1);
     }
+
     .block h3 {
       color: #00ff88;
     }
+
+    hr {
+      margin: 15px 0;
+      border: 1px solid #444;
+    }
   </style>
 </head>
+
 <body>
   <h1>📦 Full Blockchain</h1>
+
   {% for block in blocks %}
-    <div class="block">
-      <h3>🔗 Block #{{ block.index }}</h3>
-      <p><b>Time:</b> {{ block.timestamp }}</p>
-      <p><b>Device:</b> {{ block.data.deviceId }}</p>
-      <p><b>AQI:</b> {{ block.data.aqi }}</p>
-      <p><b>Temperature:</b> {{ block.data.temperature }} °C</p>
-      <p><b>Humidity:</b> {{ block.data.humidity }} %</p>
-      {% if block.data.location %}
-        <p><b>Location:</b> {{ block.data.location.lat }}, {{ block.data.location.lon }}</p>
-      {% endif %}
-      <p><b>Prev Hash:</b> {{ block.previous_hash }}</p>
-      <p><b>Hash:</b> {{ block.hash }}</p>
-    </div>
+  <div class="block">
+    <h3>🔗 Block #{{ block.index }}</h3>
+    <p><b>🕒 Time:</b> {{ block.timestamp }}</p>
+
+    {% if block.data and block.data.sensorData %}
+    <p><b>📟 Device:</b> {{ block.data.sensorData.deviceId }}</p>
+    <p><b>🧪 AQI:</b> {{ block.data.sensorData.aqi }}</p>
+    <p><b>🌡 Temperature:</b> {{ block.data.sensorData.temperature }} °C</p>
+    <p><b>💧 Humidity:</b> {{ block.data.sensorData.humidity }} %</p>
+
+    <hr>
+    <h4>📍 Location</h4>
+    <p><b>Latitude:</b> {{ block.data.sensorData.location.lat }}</p>
+    <p><b>Longitude:</b> {{ block.data.sensorData.location.lon }}</p>
+    <p><b>Speed:</b> {{ block.data.sensorData.location.speed }} m/s</p>
+
+    <hr>
+    <h4>🌫 Environment</h4>
+    <p><b>MQ135 Raw:</b> {{ block.data.sensorData.environment.air_quality.mq135_raw }}</p>
+    <p><b>Estimated PPM:</b> {{ block.data.sensorData.environment.air_quality.estimated_ppm }}</p>
+    <p><b>Temperature:</b> {{ block.data.sensorData.environment.temperature }} °C</p>
+    <p><b>Humidity:</b> {{ block.data.sensorData.environment.humidity }} %</p>
+    <p><b>Pressure:</b> {{ block.data.sensorData.environment.pressure }} hPa</p>
+    <p><b>Altitude:</b> {{ block.data.sensorData.environment.altitude }} m</p>
+    <p><b>UV Index:</b> {{ block.data.sensorData.environment.uv_index }}</p>
+    <p><b>Light Intensity:</b> {{ block.data.sensorData.environment.light_intensity_lux }} lux</p>
+    <p><b>Sound Level:</b> {{ block.data.sensorData.environment.sound_level }}</p>
+    <p><b>Rain Detected:</b> {{ block.data.sensorData.environment.rain_detected }}</p>
+
+    <hr>
+    <h4>🌱 Soil</h4>
+    <p><b>Moisture:</b> {{ block.data.sensorData.soil.moisture }} %</p>
+    <p><b>Soil Temperature:</b> {{ block.data.sensorData.soil.temperature }} °C</p>
+
+    <hr>
+    <h4>🔋 Power</h4>
+    <p><b>Voltage:</b> {{ block.data.sensorData.power.voltage }} V</p>
+    <p><b>Current:</b> {{ block.data.sensorData.power.current }} mA</p>
+    <p><b>Power:</b> {{ block.data.sensorData.power.power }} mW</p>
+
+    <hr>
+    <h4>📶 Network</h4>
+    <p><b>Upload Via:</b> {{ block.data.sensorData.network.upload_via }}</p>
+    <p><b>Signal Strength:</b> {{ block.data.sensorData.network.signal_strength }} dBm</p>
+    {% else %}
+    <p><i>No sensor data available in this block.</i></p>
+    {% endif %}
+
+    <hr>
+    <p><b>🔁 Previous Hash:</b> {{ block.previous_hash }}</p>
+    <p><b>🔐 Hash:</b> {{ block.hash }}</p>
+  </div>
   {% endfor %}
 </body>
+
 </html>

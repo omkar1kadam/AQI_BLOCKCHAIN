@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plentera - Place Order</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: rgb(8, 15, 25);
+            color: #ccc;
+        }
+
+        .navbar {
+            background: rgb(8, 15, 25);
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #222;
+        }
+
+        .navbar .logo img {
+            height: 45px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: rgb(110, 198, 74);
+        }
+
+        .container {
+            padding: 60px 10%;
+        }
+
+        h1 {
+            color: rgb(110, 198, 74);
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            border-radius: 6px;
+            border: none;
+        }
+
+        button {
+            background-color: rgb(110, 198, 74);
+            color: #111;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            border-radius: 6px;
+            margin-top: 30px;
+            cursor: pointer;
+        }
+
+        .step-success {
+            text-align: center;
+            color: rgb(110, 198, 74);
+            margin-top: 40px;
+        }
+
+        .track-btn {
+            display: inline-block;
+            margin-top: 20px;
+            background: none;
+            border: 1px solid rgb(110, 198, 74);
+            color: rgb(110, 198, 74);
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="dark logo2.png" alt="logo"></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="kit mart.html">Kits</a></li>
+            <li><a href="order place.html">Orders</a></li>
+            <li><a href="#">Dashboard</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Place Your Order</h1>
+        <form action="/buy-sensor" method="POST">
+            <p style="color: #aaa;">E-mail: <strong>{{ email }}</strong></p>
+
+            <label for="name">Full Name</label>
+            <input type="text" name="full_name" required>
+
+            <label for="kit_name">Set Kit Name (Sensor ID)</label>
+            <input type="text" name="kit_name" required>
+
+            <label for="address">Delivery Address</label>
+            <textarea name="address" rows="4" required></textarea>
+
+            <button type="submit">Order Now</button>
+        </form>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prediction Result</title>
+</head>
+<body>
+  <h2>Prediction for {{ location }} on {{ date }}</h2>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Predicted Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for key, value in results.items() %}
+        <tr>
+          <td>{{ key }}</td>
+          <td>{{ "%.2f"|format(value) }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <a href="/predict">🔙 Predict again</a>
+</body>
+</html>

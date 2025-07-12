@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Predict Environment</title>
+</head>
+<body>
+  <h2>🌍 Predict Environment for a Location & Date</h2>
+  <form method="post">
+    <label for="location">Location (e.g., 19.0890_72.8690):</label><br>
+    <input type="text" name="location" required><br><br>
+
+    <label for="date">Date (YYYY-MM-DD):</label><br>
+    <input type="date" name="date" required><br><br>
+
+    <button type="submit">Predict</button>
+  </form>
+
+  {% if result %}
+  <hr>
+  <h3>📍 Prediction Result</h3>
+  <p><strong>Location:</strong> {{ result.location }}</p>
+  <p><strong>Date:</strong> {{ result.date }}</p>
+  <ul>
+    <li>🌡 Temperature: {{ result.temperature }} °C</li>
+    <li>💧 Humidity: {{ result.humidity }} %</li>
+    <li>🌬 Pressure: {{ result.pressure }} hPa</li>
+    <li>⛰ Altitude: {{ result.altitude }} m</li>
+    <li>🌞 UV Index: {{ result.uv_index }}</li>
+  </ul>
+  {% endif %}
+</body>
+</html>

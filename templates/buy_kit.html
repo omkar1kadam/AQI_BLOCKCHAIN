@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buy Kits | Plentera</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: rgb(8, 15, 25);
+            color: #ccc;
+            padding-top: 80px;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgb(8, 15, 25);
+            padding: 15px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 999;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: rgb(110, 198, 74);
+        }
+
+        .login-btn {
+            background-color: transparent;
+            color: rgb(110, 198, 74);
+            border: 1px solid rgb(110, 198, 74);
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s ease;
+        }
+
+        .login-btn:hover {
+            background-color: rgb(110, 198, 74);
+            color: #111;
+        }
+
+        /* Kits Section */
+        .kits-section {
+            padding: 60px 10%;
+            text-align: center;
+            background-color: #111;
+        }
+
+        .kits-section h2 {
+            font-size: 2.5rem;
+            color: rgb(110, 198, 74);
+            margin-bottom: 40px;
+        }
+
+        .kit-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .kit-card {
+            background-color: #1c1c1c;
+            border-radius: 12px;
+            padding: 30px 20px;
+            width: 280px;
+            box-shadow: 0 0 15px rgba(110, 198, 74, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .kit-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .kit-card h3 {
+            color: rgb(110, 198, 74);
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 24px;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        .kit-card ul {
+            list-style: none;
+            text-align: left;
+            padding-left: 0;
+            margin-bottom: 20px;
+        }
+
+        .kit-card ul li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .kit-card ul li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: rgb(110, 198, 74);
+        }
+
+        .buy-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: rgb(110, 198, 74);
+            color: #111;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .buy-btn:hover {
+            background-color: #85cc57;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+      <a href="home">
+        <img src="{{ url_for('static', filename='images/dark logo2.png') }}" alt="logo" />
+      </a>
+    </div>
+
+        <ul class="nav-links">
+            <li><a href="home">Home</a></li>
+            <li><a href="about">About</a></li>
+            <li><a href="#">Causes</a></li>
+            <li><a href="#">Pages</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+
+        <a class="login-btn" href="/login">Login <i class="fas fa-arrow-right"></i></a>
+    </nav>
+
+    <!-- Kit Options Section -->
+    <section class="kits-section">
+        <h2>Choose Your Sensor Kit</h2>
+        <div class="kit-grid">
+
+            <div class="kit-card">
+                <h3>Basic Kit</h3>
+                <p class="price">₹70</p>
+                <ul>
+                    <li>Air Quality Sensor</li>
+                    <li>Temperature & Humidity Sensor</li>
+                    <li>USB Power Support</li>
+                </ul>
+                <a href="place_order" class="buy-btn">Buy Now</a>
+            </div>
+
+            <div class="kit-card">
+                <h3>Advanced Kit</h3>
+                <p class="price">₹100</p>
+                <ul>
+                    <li>All Basic Kit Features</li>
+                    <li>Waterproof Casing</li>
+                    <li>Battery Backup</li>
+                    <li>Bluetooth Data Sync</li>
+                </ul>
+                <a href="place_order" class="buy-btn">Buy Now</a>
+            </div>
+
+        </div>
+    </section>
+</body>
+
+</html>

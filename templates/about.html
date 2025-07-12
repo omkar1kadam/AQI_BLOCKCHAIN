@@ -224,15 +224,15 @@
 
 
     <ul class="nav-links">
-      <li><a class="active" href="home">Home</a></li>
-      <li><a href="#">About</a></li>
+      <li><a href="home">Home</a></li>
+      <li><a class="active" href="#">About</a></li>
       <li><a href="#">Causes</a></li>
       <li><a href="#">Pages</a></li>
       <li><a href="#">Contact</a></li>
     </ul>
 
     <div>
-      <a class="login-btn" href="#">Login <i class="fas fa-arrow-right"></i></a>
+      <a class="login-btn" href="/login">Login <i class="fas fa-arrow-right"></i></a>
       <a class="login-btn" href="sign_up">Sign Up <i class="fas fa-arrow-right"></i></a>
     </div>
   </nav>
@@ -240,7 +240,7 @@
   <!-- Header / Breadcrumb -->
   <header class="breadcrumb">
     <h1>About Us</h1>
-    <p><a href="index.html">Home</a> / About Us</p>
+    <!-- <p><a href="index.html">Home</a> / About Us</p> -->
   </header>
 
   <!-- About Section -->
@@ -269,7 +269,12 @@
     <h2>Let’s Meet With Our Ordinary Soldiers</h2>
     <div class="team-grid">
       <div class="member">
-        <img src="team1.jpg" alt="Omkar Ajay Kadam">
+        <img src="{{ url_for('static', filename='images/Manjusha_tatiya_mam.jpg') }}" alt="Dr. Manjusha Tatiya">
+        <h3>Dr. Manjusha Tatiya</h3>
+        <p>Mentor</p>
+      </div>
+      <div class="member">
+        <img src="{{ url_for('static', filename='images/omkar_kadam.png') }}" alt="Omkar Ajay Kadam">
         <h3>Omkar Ajay Kadam</h3>
         <p>Team Leader</p>
       </div>
