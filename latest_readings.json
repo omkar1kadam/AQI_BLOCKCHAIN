@@ -1,112 +1,202 @@
 [
   {
-    "deviceId": "sensor_001_delhi",
-    "aqi": 134.2,
-    "temperature": 32.1,
-    "humidity": 65,
-    "location": {
-      "lat": 28.7041,
-      "lon": 77.1025
-    },
-    "timestamp": 1751652501.123456
-  },
-  {
-    "deviceId": "sensor_002_mumbai",
-    "aqi": 187.6,
-    "temperature": 30.3,
-    "humidity": 78,
+    "deviceId": "test01",
+    "aqi": 72.3,
+    "temperature": 30.5,
+    "humidity": 56,
     "location": {
       "lat": 19.076,
       "lon": 72.8777
     },
-    "timestamp": 1751652502.234567
+    "timestamp": 1751706902.3979647
   },
   {
-    "deviceId": "sensor_003_kolkata",
-    "aqi": 110.4,
-    "temperature": 33.0,
-    "humidity": 69,
+    "deviceId": "sensor_test03",
+    "aqi": 56.7,
+    "temperature": 30.2,
+    "humidity": 65,
     "location": {
-      "lat": 22.5726,
-      "lon": 88.3639
+      "lat": 19.09,
+      "lon": 73.0
     },
-    "timestamp": 1751652503.345678
+    "timestamp": 1751708772.2582757
   },
   {
-    "deviceId": "sensor_004_chennai",
-    "aqi": 142.8,
-    "temperature": 34.2,
-    "humidity": 66,
+    "deviceId": "sensor_test02",
+    "aqi": 56.7,
+    "temperature": 30.2,
+    "humidity": 65,
     "location": {
-      "lat": 13.0827,
-      "lon": 80.2707
+      "lat": 19.09,
+      "lon": 73.0
     },
-    "timestamp": 1751652504.456789
+    "timestamp": 1751708782.728157
   },
   {
-    "deviceId": "sensor_005_bangalore",
-    "aqi": 95.1,
-    "temperature": 28.7,
-    "humidity": 58,
+    "deviceId": "test4",
+    "aqi": 56.7,
+    "temperature": 30.2,
+    "humidity": 65,
     "location": {
-      "lat": 12.9716,
-      "lon": 77.5946
+      "lat": 19.09,
+      "lon": 73.0
     },
-    "timestamp": 1751652505.56789
+    "timestamp": 1751709026.801866
   },
   {
-    "deviceId": "sensor_006_hyderabad",
-    "aqi": 120.6,
-    "temperature": 31.5,
-    "humidity": 62,
+    "deviceId": "test5",
+    "aqi": 56.7,
+    "temperature": 30.2,
+    "k": 3,
+    "humidity": 65,
     "location": {
-      "lat": 17.385,
-      "lon": 78.4867
+      "lat": 19.09,
+      "lon": 73.0
     },
-    "timestamp": 1751652506.678901
+    "timestamp": 1751721980.7717407
   },
   {
-    "deviceId": "sensor_008_ahmedabad",
-    "aqi": 148.9,
-    "temperature": 35.1,
-    "humidity": 60,
+    "deviceId": "esp32_node_01",
+    "timestamp": 1751782365.314196,
     "location": {
-      "lat": 23.0225,
-      "lon": 72.5714
+      "lat": 19.089,
+      "lon": 72.869,
+      "speed": 0.5
     },
-    "timestamp": 1751652508.890123
+    "environment": {
+      "air_quality": {
+        "mq135_raw": 205,
+        "estimated_ppm": 320
+      },
+      "temperature": 30.5,
+      "humidity": 65.2,
+      "pressure": 1013.25,
+      "altitude": 14.3,
+      "uv_index": 4.6,
+      "light_intensity_lux": 720,
+      "sound_level": 1,
+      "rain_detected": false
+    },
+    "soil": {
+      "moisture": 58.7,
+      "temperature": 28.4
+    },
+    "power": {
+      "voltage": 4.98,
+      "current": 150.2,
+      "power": 747.0
+    },
+    "network": {
+      "upload_via": "SIM800L",
+      "signal_strength": -70
+    }
   },
   {
-    "deviceId": "sensor_009_jaipur",
-    "aqi": 113.0,
-    "temperature": 36.8,
-    "humidity": 53,
+    "deviceId": "sensor_test01",
+    "timestamp": 1751786748.1377797,
     "location": {
-      "lat": 26.9124,
-      "lon": 75.7873
+      "lat": 19.089,
+      "lon": 72.869,
+      "speed": 0.5
     },
-    "timestamp": 1751652509.901234
+    "environment": {
+      "air_quality": {
+        "mq135_raw": 205,
+        "estimated_ppm": 320
+      },
+      "temperature": 30.5,
+      "humidity": 65.2,
+      "pressure": 1013.25,
+      "altitude": 14.3,
+      "uv_index": 4.6,
+      "light_intensity_lux": 720,
+      "sound_level": 1,
+      "rain_detected": false
+    },
+    "soil": {
+      "moisture": 58.7,
+      "temperature": 28.4
+    },
+    "power": {
+      "voltage": 4.98,
+      "current": 150.2,
+      "power": 747.0
+    },
+    "network": {
+      "upload_via": "SIM800L",
+      "signal_strength": -70
+    }
   },
   {
-    "deviceId": "sensor_010_lucknow",
-    "aqi": 129.7,
-    "temperature": 31.0,
-    "humidity": 67,
+    "deviceId": "test",
+    "timestamp": 1751987375.253562,
     "location": {
-      "lat": 26.8467,
-      "lon": 80.9462
+      "lat": 19.089,
+      "lon": 72.869,
+      "speed": 0.5
     },
-    "timestamp": 1751652510.012345
+    "environment": {
+      "air_quality": {
+        "mq135_raw": 205,
+        "estimated_ppm": 320
+      },
+      "temperature": 30.5,
+      "humidity": 65.2,
+      "pressure": 1013.25,
+      "altitude": 14.3,
+      "uv_index": 4.6,
+      "light_intensity_lux": 720,
+      "sound_level": 1,
+      "rain_detected": false
+    },
+    "soil": {
+      "moisture": 58.7,
+      "temperature": 28.4
+    },
+    "power": {
+      "voltage": 4.98,
+      "current": 150.2,
+      "power": 747.0
+    },
+    "network": {
+      "upload_via": "SIM800L",
+      "signal_strength": -70
+    }
   },
   {
-    "deviceId": "sensor_007_pune",
-    "aqi": 106.3,
-    "temperature": 29.4,
-    "humidity": 71,
+    "deviceId": "sensor_test",
+    "timestamp": 1752075827.5753949,
     "location": {
-      "lat": 18.5204,
-      "lon": 73.8567
+      "lat": 19.089,
+      "lon": 72.869,
+      "speed": 0.5
     },
-    "timestamp": 1751622942.1051378
+    "environment": {
+      "air_quality": {
+        "mq135_raw": 487,
+        "estimated_ppm": 320
+      },
+      "temperature": 27.2,
+      "humidity": 74,
+      "pressure": 1013.25,
+      "altitude": 14.3,
+      "uv_index": 0,
+      "light_intensity_lux": 720,
+      "sound_level": 0,
+      "rain_detected": false
+    },
+    "soil": {
+      "moisture": 0,
+      "temperature": 28.4
+    },
+    "power": {
+      "voltage": 4.98,
+      "current": 150.2,
+      "power": 747
+    },
+    "network": {
+      "upload_via": "SIM800L",
+      "signal_strength": -70
+    }
   }
 ]

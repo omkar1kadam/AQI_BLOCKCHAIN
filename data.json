@@ -1,7 +1,11 @@
 [
-    {
-        "name": "Omkar Kadam",
-        "email": "omkarakadam2408@gmail.com",
-        "password": "ath123"
-    }
+  {
+    "name": "omkar kadam",
+    "email": "omkarakadam2408@gmail.com",
+    "password": "123",
+    "devices": [
+      "sensor_test01",
+      "sensor_test"
+    ]
+  }
 ]
