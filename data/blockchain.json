@@ -47724,5 +47724,20 @@
         },
         "previous_hash": "c0c92679e8d1528d0df47e8c39a2b0cc47f0f7a7f171f39e851cf1d5f36322e8",
         "hash": "22a79e6738810f4588ffca0f0ecee36bf04fc78108e9f731b3b9b5ff2dfbbeaa"
+    },
+    {
+        "index": 958,
+        "timestamp": 1752328895.5466278,
+        "data": {
+            "withdrawal": {
+                "from": "omkarakadam2408@gmail.com",
+                "to": "WITHDRAWAL",
+                "amount": 3,
+                "timestamp": 1752328895.5466177,
+                "type": "withdrawal"
+            }
+        },
+        "previous_hash": "22a79e6738810f4588ffca0f0ecee36bf04fc78108e9f731b3b9b5ff2dfbbeaa",
+        "hash": "13ea249412205bb8bdae61451d2063008ec190fcb1b625f3cd7fc755290687a7"
     }
 ]
