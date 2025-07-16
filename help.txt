@@ -1,1 +1,4 @@
 ngrok http --domain=glowing-stinkbug-heartily.ngrok-free.app 5000
+npm run build
+Remove-Item ../AQI_BLOCKCHAIN/frontend/* -Recurse -Force
+cp -r dist/* ../AQI_BLOCKCHAIN/frontend/

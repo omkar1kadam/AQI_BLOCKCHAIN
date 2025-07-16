@@ -17,8 +17,10 @@ import joblib
 import pandas as pd
 import numpy as np
 import razorpay
+from flask import send_from_directory
 
-app = Flask(__name__, template_folder="templates")
+
+app = Flask(__name__, template_folder="templates", static_folder="static")
 CORS(app) 
 app.secret_key = 'supersecretkey'
 
@@ -48,6 +50,15 @@ def payment():
     return {
         "order_id": order['id']
     }
+
+@app.route("/app")
+def serve_react():
+    return send_from_directory("frontend", "index.html")
+
+@app.route("/app/<path:path>")
+def serve_react_static(path):
+    return send_from_directory("frontend", path)
+
 
 # Set the training time (24-hour format)
 TARGET_HOUR = 19
