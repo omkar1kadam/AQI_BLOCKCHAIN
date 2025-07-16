@@ -16,6 +16,7 @@ from tensorflow.keras.models import load_model
 import joblib
 import pandas as pd
 import numpy as np
+import razorpay
 
 app = Flask(__name__, template_folder="templates")
 CORS(app) 
@@ -23,6 +24,30 @@ app.secret_key = 'supersecretkey'
 
 model = load_model("final_aqi_model.keras")
 scaler = joblib.load("scaler.save")
+
+RAZORPAY_KEY_ID = 'rzp_test_Xgqvn30xIowSSX'
+RAZORPAY_KEY_SECRET = 'rIbqHRINIO8P1WIOwZr9Lldl'
+
+# Initialize Razorpay client
+client = razorpay.Client(auth=(RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET))
+
+@app.route('/pay')
+def show_payment_page():
+    return render_template('payment.html', key_id=RAZORPAY_KEY_ID)
+
+
+@app.route('/payment', methods=['POST'])
+def payment():
+    # Create Razorpay order
+    payment_data = {
+        "amount": 500,  # 
+        "currency": "INR",
+        "payment_capture": 1
+    }
+    order = client.order.create(data=payment_data)
+    return {
+        "order_id": order['id']
+    }
 
 # Set the training time (24-hour format)
 TARGET_HOUR = 19
@@ -309,6 +334,11 @@ def send_otp():
         return jsonify({"success": True})
     else:
         return jsonify({"success": False, "message": "Failed to send OTP"}), 500
+
+@app.route("/view-graphs")
+def view_graphs():
+    return render_template("graphs_by_location.html")
+
 
 # --- Route: Verify OTP ---
 @app.route('/verify-otp', methods=['POST'])

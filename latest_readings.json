@@ -165,7 +165,7 @@
   },
   {
     "deviceId": "sensor_test",
-    "timestamp": 1752075827.5753949,
+    "timestamp": 1752499888.7276566,
     "location": {
       "lat": 19.089,
       "lon": 72.869,
@@ -173,14 +173,14 @@
     },
     "environment": {
       "air_quality": {
-        "mq135_raw": 487,
+        "mq135_raw": 623,
         "estimated_ppm": 320
       },
-      "temperature": 27.2,
-      "humidity": 74,
+      "temperature": 28,
+      "humidity": 68,
       "pressure": 1013.25,
       "altitude": 14.3,
-      "uv_index": 0,
+      "uv_index": 15,
       "light_intensity_lux": 720,
       "sound_level": 0,
       "rain_detected": false
