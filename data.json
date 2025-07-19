@@ -7,5 +7,14 @@
       "sensor_test01",
       "sensor_test"
     ]
+  },
+  {
+    "name": "rucha sonar",
+    "email": "ruchasonar6@gmail.com",
+    "password": "Rucha@21",
+    "devices": [
+      "sensor_esp_humidity",
+      "sensor_esp_aqi"
+    ]
   }
 ]

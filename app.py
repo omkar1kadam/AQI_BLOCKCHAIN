@@ -62,7 +62,7 @@ def serve_react_static(path):
 
 # Set the training time (24-hour format)
 TARGET_HOUR = 19
-TARGET_MINUTE = 20 # this comment is made using live share 
+TARGET_MINUTE = 4 # this comment is made using live share 
 
 # Load blockchain
 chain = load_chain()
@@ -70,6 +70,7 @@ chain = load_chain()
 DATA_FILE = 'data.json' # this file will store user data
 LATEST_FILE = 'latest_readings.json' # This file will store the latest readings from the sensors
 TOKEN_FILE = 'token_ledger.json'
+
 
 
 # Ensure the data.json file exists
@@ -239,7 +240,7 @@ def view_earnings():
 # --- Helper: Send OTP to email using Gmail SMTP ---
 def send_email_otp(receiver_email, otp):
     sender_email = "plentera24@gmail.com"
-    sender_password = "yftmsrxpucsamnwd"  # Use Gmail App Password
+    sender_password = "ajyhlbaqbdbcctuw"  # Use Gmail App Password
 
     msg = MIMEMultipart()
     msg['From'] = sender_email

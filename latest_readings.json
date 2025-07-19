@@ -164,8 +164,8 @@
     }
   },
   {
-    "deviceId": "sensor_test",
-    "timestamp": 1752499888.7276566,
+    "deviceId": "sensor_esp_aqi",
+    "timestamp": 1752758276.9481933,
     "location": {
       "lat": 19.089,
       "lon": 72.869,
@@ -173,20 +173,93 @@
     },
     "environment": {
       "air_quality": {
-        "mq135_raw": 623,
+        "mq135_raw": 675,
         "estimated_ppm": 320
       },
-      "temperature": 28,
-      "humidity": 68,
+      "temperature": 30.5,
+      "humidity": 65.2,
       "pressure": 1013.25,
       "altitude": 14.3,
-      "uv_index": 15,
+      "uv_index": 5.4,
+      "light_intensity_lux": 720,
+      "sound_level": 1,
+      "rain_detected": false
+    },
+    "soil": {
+      "moisture": 58.7,
+      "temperature": 28.4
+    },
+    "power": {
+      "voltage": 4.98,
+      "current": 150.2,
+      "power": 747.0
+    },
+    "network": {
+      "upload_via": "SIM800L",
+      "signal_strength": -70
+    }
+  },
+  {
+    "deviceId": "sensor_test",
+    "timestamp": 1752808177.3354893,
+    "location": {
+      "lat": 19.089,
+      "lon": 72.869,
+      "speed": 0.5
+    },
+    "environment": {
+      "air_quality": {
+        "mq135_raw": 496,
+        "estimated_ppm": 320
+      },
+      "temperature": 26.1,
+      "humidity": 59,
+      "pressure": 1013.25,
+      "altitude": 14.3,
+      "uv_index": 0,
       "light_intensity_lux": 720,
       "sound_level": 0,
       "rain_detected": false
     },
     "soil": {
       "moisture": 0,
+      "temperature": 28.4
+    },
+    "power": {
+      "voltage": 4.98,
+      "current": 150.2,
+      "power": 747
+    },
+    "network": {
+      "upload_via": "SIM800L",
+      "signal_strength": -70
+    }
+  },
+  {
+    "deviceId": "sensor_esp_humidity",
+    "timestamp": 1752808892.3407154,
+    "location": {
+      "lat": 19.089,
+      "lon": 72.869,
+      "speed": 0.5
+    },
+    "environment": {
+      "air_quality": {
+        "mq135_raw": 784,
+        "estimated_ppm": 320
+      },
+      "temperature": 24.3,
+      "humidity": 65.7,
+      "pressure": 1013.25,
+      "altitude": 14.3,
+      "uv_index": 0,
+      "light_intensity_lux": 720,
+      "sound_level": 0,
+      "rain_detected": true
+    },
+    "soil": {
+      "moisture": 0,
+      "wet": true,
       "temperature": 28.4
     },
     "power": {
