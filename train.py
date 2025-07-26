@@ -150,4 +150,4 @@ def wait_until_target_time(hour, minute):
 if __name__ == '__main__':
     TARGET_HOUR = 11
     TARGET_MINUTE = 38
-    wait_until_target_time(TARGET_HOUR, TARGET_MINUTE)
+    # wait_until_target_time(TARGET_HOUR, TARGET_MINUTE)
