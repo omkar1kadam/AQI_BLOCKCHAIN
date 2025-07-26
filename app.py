@@ -12,7 +12,7 @@ from email.mime.multipart import MIMEMultipart
 from flask_cors import CORS
 from datetime import datetime
 from train import wait_until_target_time
-from tensorflow.keras.models import load_model
+# from tensorflow.keras.models import load_model
 import joblib
 import pandas as pd
 import numpy as np
