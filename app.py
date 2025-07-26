@@ -24,8 +24,8 @@ app = Flask(__name__, template_folder="templates", static_folder="static")
 CORS(app) 
 app.secret_key = 'supersecretkey'
 
-model = load_model("final_aqi_model.keras")
-scaler = joblib.load("scaler.save")
+# model = load_model("final_aqi_model.keras")
+# scaler = joblib.load("scaler.save")
 
 RAZORPAY_KEY_ID = 'rzp_test_Xgqvn30xIowSSX'
 RAZORPAY_KEY_SECRET = 'rIbqHRINIO8P1WIOwZr9Lldl'
