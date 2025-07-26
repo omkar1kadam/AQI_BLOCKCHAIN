@@ -106,31 +106,31 @@ def get_token_balance(email):
         return 0
     return sum(ledger[email].values())
 
-def predict_environment(location):
-    df = pd.read_csv("dataset.csv")
+# def predict_environment(location):
+#     df = pd.read_csv("dataset.csv")
 
-    # Filter by location
-    location_data = df[df["Location"] == location].sort_values("Timestamp")
+#     # Filter by location
+#     location_data = df[df["Location"] == location].sort_values("Timestamp")
 
-    if len(location_data) < 7:
-        return None  # Not enough data
+#     if len(location_data) < 7:
+#         return None  # Not enough data
 
-    # Drop unneeded columns and keep the last 7 rows
-    input_data = location_data.drop(["Timestamp", "Location"], axis=1).tail(7)
-    scaled_input = scaler.transform(input_data)
-    X_input = np.array([scaled_input])
+#     # Drop unneeded columns and keep the last 7 rows
+#     input_data = location_data.drop(["Timestamp", "Location"], axis=1).tail(7)
+#     scaled_input = scaler.transform(input_data)
+#     X_input = np.array([scaled_input])
 
-    # Predict next timestep
-    prediction = model.predict(X_input)[0]
+#     # Predict next timestep
+#     prediction = model.predict(X_input)[0]
 
-    # Inverse scale
-    full_df = df.drop(["Timestamp", "Location"], axis=1)
-    dummy = np.zeros((1, full_df.shape[1]))
-    dummy[0] = prediction
-    predicted_values = scaler.inverse_transform(dummy)[0]
+#     # Inverse scale
+#     full_df = df.drop(["Timestamp", "Location"], axis=1)
+#     dummy = np.zeros((1, full_df.shape[1]))
+#     dummy[0] = prediction
+#     predicted_values = scaler.inverse_transform(dummy)[0]
 
-    columns = full_df.columns.tolist()
-    return dict(zip(columns, predicted_values))
+#     columns = full_df.columns.tolist()
+#     return dict(zip(columns, predicted_values))
 
 def update_token_balance(email, device_id, change):  
     # ✅ Force device_id to start with "sensor_"
@@ -153,48 +153,48 @@ def update_token_balance(email, device_id, change):
     with open(TOKEN_FILE, 'w') as f:
         json.dump(ledger, f, indent=2)
 
-@app.route("/predict", methods=["GET", "POST"])
-def predict():
-    if request.method == "POST":
-        location = request.form.get("location")
-        date = request.form.get("date")
+# @app.route("/predict", methods=["GET", "POST"])
+# def predict():
+#     if request.method == "POST":
+#         location = request.form.get("location")
+#         date = request.form.get("date")
 
-        try:
-            df = pd.read_csv("dataset.csv")
-            df = df[df["Location"] == location]
-            df = df.sort_values("Timestamp")
+#         try:
+#             df = pd.read_csv("dataset.csv")
+#             df = df[df["Location"] == location]
+#             df = df.sort_values("Timestamp")
 
-            feature_columns = [
-                "mq135_raw", "soil_moisture", "soil_temperature", "speed",
-                "light_intensity_lux", "sound_level", "rain_detected", "estimated_ppm",
-                "temperature", "humidity", "pressure", "altitude", "uv_index"
-            ]
+#             feature_columns = [
+#                 "mq135_raw", "soil_moisture", "soil_temperature", "speed",
+#                 "light_intensity_lux", "sound_level", "rain_detected", "estimated_ppm",
+#                 "temperature", "humidity", "pressure", "altitude", "uv_index"
+#             ]
 
-            missing_cols = [col for col in feature_columns if col not in df.columns]
-            if missing_cols:
-                return f"Missing columns for prediction: {missing_cols}"
+#             missing_cols = [col for col in feature_columns if col not in df.columns]
+#             if missing_cols:
+#                 return f"Missing columns for prediction: {missing_cols}"
 
-            df_model = df[feature_columns]
-            scaled = scaler.transform(df_model)
+#             df_model = df[feature_columns]
+#             scaled = scaler.transform(df_model)
 
-            SEQ_LEN = 7
-            if len(scaled) < SEQ_LEN:
-                return "Not enough data for prediction"
+#             SEQ_LEN = 7
+#             if len(scaled) < SEQ_LEN:
+#                 return "Not enough data for prediction"
 
-            input_seq = scaled[-SEQ_LEN:]
-            input_seq = np.expand_dims(input_seq, axis=0)
+#             input_seq = scaled[-SEQ_LEN:]
+#             input_seq = np.expand_dims(input_seq, axis=0)
 
-            predicted = model.predict(input_seq)[0]
-            predicted_original = scaler.inverse_transform([predicted])[0]
+#             predicted = model.predict(input_seq)[0]
+#             predicted_original = scaler.inverse_transform([predicted])[0]
 
-            results = dict(zip(feature_columns, predicted_original))
+#             results = dict(zip(feature_columns, predicted_original))
 
-            return render_template("result.html", results=results, location=location, date=date)
+#             return render_template("result.html", results=results, location=location, date=date)
 
-        except Exception as e:
-            return f"Error: {str(e)}"
+#         except Exception as e:
+#             return f"Error: {str(e)}"
 
-    return render_template("predict.html")
+#     return render_template("predict.html")
 
 def get_device_token_map(email):
     with open(TOKEN_FILE, 'r') as f:
