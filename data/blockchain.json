@@ -87410,5 +87410,105 @@
         },
         "previous_hash": "19b03ec0c2f9e07d0a39250a5a2c235c92d9e916fe41b8fa903e0436d8ef6c58",
         "hash": "60acd6d3e5e348a5cfba7c7517223aca4711dc9cd796ffa78fc059ba733ca788"
+    },
+    {
+        "index": 1754,
+        "timestamp": 1752901651.3316724,
+        "data": {
+            "sensorData": {
+                "deviceId": "sensor_esp_aqi",
+                "timestamp": 1752901651.3276265,
+                "location": {
+                    "lat": 19.089,
+                    "lon": 72.869,
+                    "speed": 0.5
+                },
+                "environment": {
+                    "air_quality": {
+                        "mq135_raw": 675,
+                        "estimated_ppm": 320
+                    },
+                    "temperature": 30.5,
+                    "humidity": 65.2,
+                    "pressure": 1013.25,
+                    "altitude": 14.3,
+                    "uv_index": 5.4,
+                    "light_intensity_lux": 720,
+                    "sound_level": 1,
+                    "rain_detected": false
+                },
+                "soil": {
+                    "moisture": 58.7,
+                    "temperature": 28.4
+                },
+                "power": {
+                    "voltage": 4.98,
+                    "current": 150.2,
+                    "power": 747.0
+                },
+                "network": {
+                    "upload_via": "SIM800L",
+                    "signal_strength": -70
+                }
+            },
+            "reward": {
+                "from": "SYSTEM",
+                "to": "sensor_esp_aqi",
+                "amount": 1,
+                "timestamp": 1752901651.3316724
+            }
+        },
+        "previous_hash": "60acd6d3e5e348a5cfba7c7517223aca4711dc9cd796ffa78fc059ba733ca788",
+        "hash": "a33c833d11556776254c9d45377dffddc4e7e6e0b35c9c2858e736622e0c57fd"
+    },
+    {
+        "index": 1755,
+        "timestamp": 1752901674.4399283,
+        "data": {
+            "sensorData": {
+                "deviceId": "sensor_test",
+                "timestamp": 1752901674.4171503,
+                "location": {
+                    "lat": 19.089,
+                    "lon": 72.869,
+                    "speed": 0.5
+                },
+                "environment": {
+                    "air_quality": {
+                        "mq135_raw": 675,
+                        "estimated_ppm": 320
+                    },
+                    "temperature": 30.5,
+                    "humidity": 65.2,
+                    "pressure": 1013.25,
+                    "altitude": 14.3,
+                    "uv_index": 5.4,
+                    "light_intensity_lux": 720,
+                    "sound_level": 1,
+                    "rain_detected": false
+                },
+                "soil": {
+                    "moisture": 58.7,
+                    "temperature": 28.4
+                },
+                "power": {
+                    "voltage": 4.98,
+                    "current": 150.2,
+                    "power": 747.0
+                },
+                "network": {
+                    "upload_via": "SIM800L",
+                    "signal_strength": -70
+                }
+            },
+            "reward": {
+                "from": "SYSTEM",
+                "to": "sensor_test",
+                "amount": 1,
+                "timestamp": 1752901674.4399283
+            }
+        },
+        "previous_hash": "a33c833d11556776254c9d45377dffddc4e7e6e0b35c9c2858e736622e0c57fd",
+        "hash": "29b1413d6d241dc5891ccbfe3ff9bde04fb9a9ac949b1b06dd7896eb7ba23c04"
     }
 ]

@@ -5,10 +5,10 @@
     "sensor_test03": 0,
     "sensor_test4": 0,
     "sensor_test5": 0,
-    "sensor_test": 1693
+    "sensor_test": 1694
   },
   "ruchasonar6@gmail.com": {
     "sensor_esp_humidity": 88,
-    "sensor_esp_aqi": 2
+    "sensor_esp_aqi": 3
   }
 }
